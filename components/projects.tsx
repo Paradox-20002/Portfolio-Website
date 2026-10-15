@@ -49,30 +49,30 @@ const Projects = () => {
       ],
     },
     {
-      title: "Enoves - Portfolio Website",
+      title: "Enoves - Corporate Agency Platform",
       tagline:
-        "Live Client Platform delivering 90+ Google Lighthouse performance",
+        "Official Web Platform for Enoves Software Engineering Consultancy",
       description:
-        "Engineered a production-ready luxury transportation booking platform for a North American client. Features automated server-side email dispatch with NodeMailer, live Google Maps integrations, fluid Framer Motion micro-interactions, and conversion-optimized mobile-first UX.",
+        "Contributed to the development of the official digital platform for Enoves, the custom software consultancy where I work as an Associate Software Engineer. Implemented modern responsive UI layouts, interactive solution catalogs, and fluid micro-interactions with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.",
       technologies: [
         "Next.js 14",
-        "Node.js",
-        "NodeMailer",
-        "Framer Motion",
+        "React",
+        "TypeScript",
         "Tailwind CSS",
+        "Framer Motion",
         "Vercel",
       ],
-      badge: "Production Client",
+      badge: "Company Platform",
       badgeColor:
-        "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
+        "bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20",
       image: "/projects/enoves.png",
       // github: "https://github.com/Paradox-20002",
       demo: "https://enoves.com",
       isFeatured: false,
       highlights: [
-        "90+ Lighthouse Performance & SEO",
-        "Automated Email Dispatch System",
-        "Dynamic Distance & Fleet Calculator",
+        "Interactive Service & Solution Showcases",
+        "Modular Component Architecture",
+        "High-Performance SSR & SEO Optimization",
       ],
     },
     {
