@@ -78,7 +78,7 @@ const Hero = () => {
               transition={{ delay: 0.6 }}
               className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-12 font-light tracking-wide"
             >
-              Software Engineer
+              Full-Stack Software Engineer
             </motion.div>
 
             <motion.p
@@ -87,8 +87,8 @@ const Hero = () => {
               transition={{ delay: 0.8 }}
               className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl"
             >
-              Specializing in mobile app development with Flutter and Dart, with expertise in full-stack web development
-              and emerging interest in data analytics.
+              Building scalable, high-performance web applications with React.js, Next.js, TypeScript, and Node.js.
+              Delivering end-to-end solutions from PostgreSQL and Prisma data models to responsive UIs and AI-driven features.
             </motion.p>
 
             <motion.div
@@ -121,7 +121,7 @@ const Hero = () => {
               className="flex gap-6 justify-center lg:justify-start mt-8"
             >
               <motion.a
-                href="https://github.com/Alpha-Bravo-Draco"
+                href="https://github.com/Paradox-20002"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
@@ -131,7 +131,7 @@ const Hero = () => {
                 <Github size={24} />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/muhammad-noman-2ba218221/"
+                href="https://linkedin.com/in/noman210900"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: -5 }}
@@ -157,23 +157,61 @@ const Hero = () => {
                 <Phone size={24} />
               </motion.a>
             </motion.div>
+
+            {/* Tech Focus Pills */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.3 }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mt-8"
+            >
+              <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold mr-1">Stack:</span>
+              {["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "AI Features"].map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="px-3 py-1 rounded-full text-xs bg-gray-100/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 font-medium backdrop-blur-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </motion.div>
           </motion.div>
 
-          {/* Profile Image */}
+          {/* Profile Image with Increased Radius */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex-1 flex justify-center lg:justify-end"
           >
-            <motion.div whileHover={{ scale: 1.05 }} className="relative">
+            <motion.div whileHover={{ scale: 1.02 }} className="relative">
+              {/* Animated Glow Backdrop */}
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-20"
+                transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                className="absolute -inset-4 bg-gradient-to-tr from-blue-600/25 via-indigo-500/20 to-purple-600/25 rounded-full blur-3xl opacity-60"
               />
-              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-2xl">
-                <Image src="/profile.jpg" alt="Muhammad Noman" fill className="object-cover" priority />
+
+              {/* Enlarged Avatar Container with Increased Radius */}
+              <div className="relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] lg:w-[480px] lg:h-[480px] xl:w-[510px] xl:h-[510px] rounded-full overflow-hidden border-4 border-white/90 dark:border-gray-700/80 shadow-2xl bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 ring-1 ring-black/5 dark:ring-white/10">
+                <Image
+                  src="/profile.png"
+                  alt="Muhammad Noman"
+                  fill
+                  className="object-cover object-top scale-100 transition-transform duration-500 hover:scale-105"
+                  priority
+                />
+              </div>
+
+              {/* Available Status Pill */}
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-full shadow-xl border border-gray-200/80 dark:border-gray-700/80 flex items-center gap-2.5 whitespace-nowrap z-20">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span className="text-xs font-semibold tracking-wide text-gray-800 dark:text-gray-200">
+                  Available for Opportunities
+                </span>
               </div>
             </motion.div>
           </motion.div>

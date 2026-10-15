@@ -3,28 +3,29 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Muhammad Noman - Flutter Developer Portfolio",
+  title: "Muhammad Noman - Full-Stack Software Engineer Portfolio",
   description:
-    "Versatile Developer specializing in mobile app development with Flutter and Dart. Experienced in full-stack web development and passionate about creating innovative, user-friendly applications.",
-  keywords: "Flutter Developer, Mobile App Development, Dart, React, Next.js, Full Stack Developer, Pakistan",
+    "Full-Stack Software Engineer specializing in React.js, Next.js, TypeScript, and Node.js. Building scalable web applications, PostgreSQL/Prisma backends, and AI-driven solutions.",
+  keywords: "Full-Stack Software Engineer, Next.js, React.js, TypeScript, Node.js, PostgreSQL, Prisma, Tailwind CSS, WebMCP, Web Developer, Lahore, Pakistan",
   authors: [{ name: "Muhammad Noman" }],
   creator: "Muhammad Noman",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://muhammad-noman-portfolio.vercel.app",
-    title: "Muhammad Noman - Flutter Developer Portfolio",
-    description: "Versatile Developer specializing in mobile app development with Flutter and Dart.",
+    title: "Muhammad Noman - Full-Stack Software Engineer Portfolio",
+    description: "Full-Stack Software Engineer specializing in React.js, Next.js, TypeScript, and Node.js.",
     siteName: "Muhammad Noman Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Noman - Flutter Developer Portfolio",
-    description: "Versatile Developer specializing in mobile app development with Flutter and Dart.",
+    title: "Muhammad Noman - Full-Stack Software Engineer Portfolio",
+    description: "Full-Stack Software Engineer specializing in React.js, Next.js, TypeScript, and Node.js.",
   },
 }
 
@@ -36,8 +37,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        {children}
-        <Toaster />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   )

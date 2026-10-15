@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Moon, Sun, Menu, X } from "lucide-react"
-import { useTheme } from "./ThemeProvider"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState("home")
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [activeSection, setActiveSection] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const navItems = [
     { id: "home", label: "Home" },
@@ -17,36 +17,36 @@ const Header = () => {
     { id: "projects", label: "Projects" },
     { id: "resume", label: "Resume" },
     { id: "contact", label: "Contact" },
-  ]
+  ];
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setActiveSection(sectionId)
-      setIsMenuOpen(false)
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(sectionId);
+      setIsMenuOpen(false);
     }
-  }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.id)
+      const sections = navItems.map((item) => item.id);
       const currentSection = sections.find((section) => {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
         }
-        return false
-      })
+        return false;
+      });
       if (currentSection) {
-        setActiveSection(currentSection)
+        setActiveSection(currentSection);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.header
@@ -122,7 +122,10 @@ const Header = () => {
         {/* Mobile Navigation */}
         <motion.div
           initial={false}
-          animate={{ height: isMenuOpen ? "auto" : 0, opacity: isMenuOpen ? 1 : 0 }}
+          animate={{
+            height: isMenuOpen ? "auto" : 0,
+            opacity: isMenuOpen ? 1 : 0,
+          }}
           className="md:hidden overflow-hidden"
         >
           <div className="py-4 space-y-2">
@@ -143,7 +146,7 @@ const Header = () => {
         </motion.div>
       </nav>
     </motion.header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

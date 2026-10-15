@@ -12,10 +12,10 @@ const Resume = () => {
 
   const downloadResume = () => {
     // Create a link element to download the PDF file
-    const link = document.createElement('a')
-    link.href = '/Resume.pdf'
-    link.download = 'Muhammad_Noman_Resume.pdf'
-    link.target = '_blank'
+    const link = document.createElement("a")
+    link.href = "/Resume.pdf"
+    link.download = "Muhammad_Noman_Resume.pdf"
+    link.target = "_blank"
     
     // Append to body, click, and remove
     document.body.appendChild(link)
@@ -26,59 +26,46 @@ const Resume = () => {
   const resumeData = {
     personalInfo: {
       name: "Muhammad Noman",
+      title: "Full-Stack Software Engineer",
       email: "buttnoman778@gmail.com",
       phone: "+92-321-6013698",
-      github: "https://github.com/Alpha-Bravo-Draco",
-      linkedin: "https://linkedin.com/in/muhammad-noman-2ba218221/",
+      github: "https://github.com/Paradox-20002",
+      linkedin: "https://linkedin.com/in/noman210900",
       location: "Lahore, Pakistan",
     },
     summary:
-      "Versatile Developer with a primary focus on mobile application development using Flutter and Dart. Skilled in building innovative, user-friendly apps with clean, efficient code. In addition to app development, I have a solid foundation in full-stack web development using the MERN stack and an emerging interest in data analytics and visualization. A fast learner, effective team player, and problem solver who actively keeps up with evolving tech trends and best practices across multiple domains.",
+      "Full-stack developer with a BS in Computer Science and 2+ years of combined professional and freelance experience building web applications with React.js, Next.js, TypeScript, and Node.js. Works on both sides of a product: PostgreSQL/Prisma data models and REST APIs on the back end, fast and responsive interfaces on the front, then deploys it all to production. Experienced in building AI-driven features (AI image analysis, voice interfaces, WebMCP agent integration) delivering 90+ Lighthouse scores on client projects.",
     education: [
       {
         institution: "Air University Islamabad",
-        degree: "Bachelors in Computer Science",
-        period: "Sep 2021 - July 2025",
-        location: "Lahore, Pakistan",
-      },
-      {
-        institution: "Punjab Group of Colleges (PGC)",
-        degree: "FSC Pre-Engineering",
-        period: "Feb 2018 - July 2020",
-        location: "Lahore, Pakistan",
+        degree: "Bachelor of Science in Computer Science",
+        period: "Sep 2021 – Jul 2025",
+        location: "Islamabad, Pakistan",
       },
     ],
     experience: [
       {
-        company: "Devverse",
-        position: "Freelance",
-        period: "Mar 2025 - Apr 2025",
-        location: "Islamabad, Pakistan",
-        description:
-          "Contributed to backend integrations and frontend development using Flutter and GetX. Key tasks included user registration and playlist management via REST APIs, UI development and integration, local data handling with SharedPreferences, and API response debugging and error handling.",
-      },
-      {
-        company: "MyImpactMeter",
-        position: "Intern",
-        period: "July 2024 - Sep 2024",
+        company: "Enoves",
+        position: "Associate Software Engineer",
+        period: "Oct 2025 – Present",
         location: "Lahore, Pakistan",
         description:
-          "Worked on Flutter app development, implementing REST APIs, managing user authentication, and optimizing performance. Gained experience with agile workflows, including sprints and code reviews.",
+          "Build and ship full-stack web applications with Next.js, React.js, TypeScript, Node.js, and Tailwind CSS. Own an internal blog CMS end-to-end with PostgreSQL and Prisma data models. Built a production booking platform for a North American client (niagaralimo.ca) with automated email dispatch and Framer Motion micro-interactions, delivering 90+ Lighthouse scores.",
       },
       {
-        company: "AIONS",
-        position: "Intern",
-        period: "Sept 2023 - Dec 2023",
+        company: "Techionik Ltd",
+        position: "Next.js Developer",
+        period: "Feb 2026 – May 2026",
         location: "Lahore, Pakistan",
         description:
-          "Contributed to the development of CHAPERONE, a companion website, utilizing HTML, CSS, and basic JavaScript.",
+          "Developed pixel-perfect, responsive UIs with Next.js, React, TypeScript, and Tailwind CSS. Built a voice-driven accessibility layer with Web Speech API for real-time speech-to-text. Integrated frontend with headless CMS via REST APIs and implemented JSON-LD structured data to enhance SEO indexing.",
       },
     ],
     skills: {
-      languages: ["Dart", "JavaScript", "C++", "HTML", "CSS", "Python"],
-      databases: ["Firebase"],
-      tools: ["Visual Studio Code", "Postman", "Git", "Figma"],
-      softSkills: ["Team Collaboration", "Problem Solving", "Creativity", "Adaptability", "Multi-Tasking"],
+      frontend: ["React.js", "Next.js (SSR/SSG)", "Redux Toolkit", "Tailwind CSS", "Framer Motion"],
+      backend: ["Node.js", "REST APIs", "PostgreSQL", "Prisma (Schema Design, Migrations)", "Headless CMS"],
+      languages: ["TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Dart"],
+      tools: ["Git", "GitHub", "Vercel", "Render", "Postman", "Jest", "Cursor AI", "Lighthouse"],
     },
   }
 
@@ -121,32 +108,37 @@ const Resume = () => {
         </motion.div>
 
         {/* Resume Content */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto shadow-xl rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 p-12"
+            className="bg-gray-900 dark:bg-zinc-950 text-white p-10 md:p-12 border-b border-gray-800"
           >
             <h3 className="text-3xl font-bold mb-4">{resumeData.personalInfo.name}</h3>
-            <div className="grid md:grid-cols-2 gap-4 text-sm">
+            <p className="text-blue-400 font-medium mb-6">{resumeData.personalInfo.title}</p>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
               <div className="flex items-center">
-                <Mail className="w-4 h-4 mr-2" />
-                {resumeData.personalInfo.email}
+                <Mail className="w-4 h-4 mr-2 text-blue-400" />
+                <a href={`mailto:${resumeData.personalInfo.email}`} className="hover:underline">
+                  {resumeData.personalInfo.email}
+                </a>
               </div>
               <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-2" />
-                {resumeData.personalInfo.phone}
+                <Phone className="w-4 h-4 mr-2 text-emerald-400" />
+                <a href={`tel:${resumeData.personalInfo.phone.replace(/[^0-9+]/g, '')}`} className="hover:underline">
+                  {resumeData.personalInfo.phone}
+                </a>
               </div>
               <div className="flex items-center">
-                <Github className="w-4 h-4 mr-2" />
+                <Github className="w-4 h-4 mr-2 text-gray-300" />
                 <a href={resumeData.personalInfo.github} target="_blank" rel="noopener noreferrer" className="hover:underline">
                   GitHub Profile
                 </a>
               </div>
               <div className="flex items-center">
-                <Linkedin className="w-4 h-4 mr-2" />
+                <Linkedin className="w-4 h-4 mr-2 text-blue-400" />
                 <a href={resumeData.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:underline">
                   LinkedIn Profile
                 </a>
@@ -154,7 +146,7 @@ const Resume = () => {
             </div>
           </motion.div>
 
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-12 space-y-12">
+          <div className="bg-gray-50 dark:bg-gray-800/50 p-8 md:p-12 space-y-12">
             {/* Summary */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -174,13 +166,13 @@ const Resume = () => {
               <h4 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Education</h4>
               <div className="space-y-4">
                 {resumeData.education.map((edu, index) => (
-                  <div key={index} className="border-l border-gray-300 dark:border-gray-600 pl-6">
-                    <h5 className="font-semibold text-gray-800 dark:text-white">{edu.institution}</h5>
+                  <div key={index} className="border-l-2 border-blue-500 dark:border-blue-400 pl-6 py-1">
+                    <h5 className="font-semibold text-gray-800 dark:text-white text-lg">{edu.institution}</h5>
                     <p className="text-blue-600 dark:text-blue-400 font-medium">{edu.degree}</p>
                     <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-1">
                       <span>{edu.period}</span>
                       <span className="mx-2">•</span>
-                      <MapPin className="w-3 h-3 mr-1" />
+                      <MapPin className="w-3.5 h-3.5 mr-1" />
                       <span>{edu.location}</span>
                     </div>
                   </div>
@@ -195,16 +187,16 @@ const Resume = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <h4 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Experience</h4>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {resumeData.experience.map((exp, index) => (
-                  <div key={index} className="border-l border-gray-300 dark:border-gray-600 pl-6">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h5 className="font-semibold text-gray-800 dark:text-white">{exp.company}</h5>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</span>
+                  <div key={index} className="border-l-2 border-purple-500 dark:border-purple-400 pl-6 py-1">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
+                      <h5 className="font-bold text-gray-800 dark:text-white text-lg">{exp.company}</h5>
+                      <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">{exp.period}</span>
                     </div>
-                    <p className="text-purple-600 dark:text-purple-400 font-medium mb-1">{exp.position}</p>
-                    <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-                      <MapPin className="w-3 h-3 mr-1" />
+                    <p className="text-purple-600 dark:text-purple-400 font-semibold mb-2">{exp.position}</p>
+                    <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                      <MapPin className="w-3.5 h-3.5 mr-1" />
                       <span>{exp.location}</span>
                     </div>
                     <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{exp.description}</p>
@@ -222,25 +214,54 @@ const Resume = () => {
               <h4 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Skills</h4>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h5 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Programming Languages</h5>
+                  <h5 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">Frontend Development</h5>
                   <div className="flex flex-wrap gap-2">
-                    {resumeData.skills.languages.map((skill, index) => (
+                    {resumeData.skills.frontend.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
+                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 text-sm rounded-full"
                       >
                         {skill}
                       </span>
                     ))}
                   </div>
                 </div>
+
                 <div>
-                  <h5 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Tools & Technologies</h5>
+                  <h5 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">Backend & Database</h5>
                   <div className="flex flex-wrap gap-2">
-                    {[...resumeData.skills.databases, ...resumeData.skills.tools].map((skill, index) => (
+                    {resumeData.skills.backend.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm rounded-full"
+                        className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200 text-sm rounded-full"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h5 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">Programming Languages</h5>
+                  <div className="flex flex-wrap gap-2">
+                    {resumeData.skills.languages.map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 text-sm rounded-full"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h5 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">Tools & Platforms</h5>
+                  <div className="flex flex-wrap gap-2">
+                    {resumeData.skills.tools.map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 text-sm rounded-full"
                       >
                         {skill}
                       </span>

@@ -7,7 +7,7 @@ import Skills from "@/components/skills"
 import Projects from "@/components/projects"
 import Resume from "@/components/resume"
 import Contact from "@/components/contact"
-import { ThemeProvider } from "@/components/theme-provider"
+import Footer from "@/components/footer"
 
 export default function Home() {
   const { scrollYProgress } = useScroll()
@@ -18,24 +18,23 @@ export default function Home() {
   })
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-      <div className="relative">
-        {/* Progress bar */}
-        <motion.div
-          className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 transform-origin-0 z-50"
-          style={{ scaleX }}
-        />
+    <div className="relative">
+      {/* Progress bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 transform-origin-0 z-50"
+        style={{ scaleX }}
+      />
 
-        <Header />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Resume />
-          <Contact />
-        </main>
-      </div>
-    </ThemeProvider>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Resume />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   )
 }
