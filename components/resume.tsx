@@ -34,7 +34,7 @@ const Resume = () => {
       location: "Lahore, Pakistan",
     },
     summary:
-      "Full-stack developer with a BS in Computer Science and 2+ years of combined professional and freelance experience building web applications with React.js, Next.js, TypeScript, and Node.js. Works on both sides of a product: PostgreSQL/Prisma data models and REST APIs on the back end, fast and responsive interfaces on the front, then deploys it all to production. Experienced in building AI-driven features (AI image analysis, voice interfaces, WebMCP agent integration) delivering 90+ Lighthouse scores on client projects.",
+      "Full-stack developer with a BS in Computer Science and 1+ year of professional experience building web applications with React.js, Next.js, TypeScript, and Node.js. Works on both sides of a product: PostgreSQL/Prisma data models and REST APIs on the back end, fast and responsive interfaces on the front, then deploys it all to production. Experienced in building AI-driven features (AI image analysis, voice interfaces, WebMCP agent integration) delivering 90+ Lighthouse scores on client projects.",
     education: [
       {
         institution: "Air University Islamabad",
@@ -47,7 +47,7 @@ const Resume = () => {
       {
         company: "Enoves",
         position: "Associate Software Engineer",
-        period: "Oct 2025 – Present",
+        period: "Oct 2025 – oct-2026",
         location: "Lahore, Pakistan",
         description:
           "Build and ship full-stack web applications with Next.js, React.js, TypeScript, Node.js, and Tailwind CSS. Own an internal blog CMS end-to-end with PostgreSQL and Prisma data models. Built a production booking platform for a North American client (niagaralimo.ca) with automated email dispatch and Framer Motion micro-interactions, delivering 90+ Lighthouse scores.",
